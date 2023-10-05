@@ -1,0 +1,21 @@
+
+name: Debug
+
+on:
+  push:
+
+
+
+jobs:
+  sdist:
+    name: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download openslide windows build
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v2
+        with: 
+          repo: openslide/openslide
+          workflow: c.yml
+          name: openslide-windows-main-*
+          name_is_regexp: true
